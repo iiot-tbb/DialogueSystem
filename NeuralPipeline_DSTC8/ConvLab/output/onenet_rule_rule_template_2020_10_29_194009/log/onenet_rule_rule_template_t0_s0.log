@@ -1,0 +1,536 @@
+[2020-10-29 19:40:10,862 PID:3513 INFO file_utils.py get_from_cache] https://convlab.blob.core.windows.net/models/onenet.tar.gz not found in cache, downloading to /tmp/tmp7i24r690
+[2020-10-29 19:42:24,025 PID:3513 INFO file_utils.py get_from_cache] copying /tmp/tmp7i24r690 to cache at /home/bool_tbb/.convlab/cache/d89430f1db7757ade4c5dac2c97f56f668a5db9fef53c78248053676856cd80d.8c3827d5e22ccc6cc146fb601e3551458283e3a5188d3b2e95b6f46a90f24e52
+[2020-10-29 19:42:24,136 PID:3513 INFO file_utils.py get_from_cache] creating metadata file for /home/bool_tbb/.convlab/cache/d89430f1db7757ade4c5dac2c97f56f668a5db9fef53c78248053676856cd80d.8c3827d5e22ccc6cc146fb601e3551458283e3a5188d3b2e95b6f46a90f24e52
+[2020-10-29 19:42:24,139 PID:3513 INFO file_utils.py get_from_cache] removing temp file /tmp/tmp7i24r690
+[2020-10-29 19:42:24,143 PID:3513 INFO archival.py load_archive] loading archive file /home/bool_tbb/.convlab/cache/d89430f1db7757ade4c5dac2c97f56f668a5db9fef53c78248053676856cd80d.8c3827d5e22ccc6cc146fb601e3551458283e3a5188d3b2e95b6f46a90f24e52
+[2020-10-29 19:42:24,143 PID:3513 INFO archival.py load_archive] extracting archive file /home/bool_tbb/.convlab/cache/d89430f1db7757ade4c5dac2c97f56f668a5db9fef53c78248053676856cd80d.8c3827d5e22ccc6cc146fb601e3551458283e3a5188d3b2e95b6f46a90f24e52 to temp dir /tmp/tmpwp8pv5z8
+[2020-10-29 19:42:24,341 PID:3513 INFO params.py pop] type = default
+[2020-10-29 19:42:24,341 PID:3513 INFO vocabulary.py from_files] Loading token dictionary from /tmp/tmpwp8pv5z8/vocabulary.
+[2020-10-29 19:42:24,381 PID:3513 INFO from_params.py from_params] instantiating class <class 'allennlp.models.model.Model'> from params {'dropout': 0.5, 'encoder': {'bidirectional': True, 'dropout': 0.5, 'hidden_size': 200, 'input_size': 178, 'num_layers': 2, 'type': 'lstm'}, 'include_start_end_transitions': False, 'label_encoding': 'BIO', 'regularizer': [['scalar_parameters', {'alpha': 0.1, 'type': 'l2'}]], 'text_field_embedder': {'token_embedders': {'token_characters': {'embedding': {'embedding_dim': 16}, 'encoder': {'conv_layer_activation': 'relu', 'embedding_dim': 16, 'ngram_filter_sizes': [3], 'num_filters': 128, 'type': 'cnn'}, 'type': 'character_encoding'}, 'tokens': {'embedding_dim': 50, 'trainable': True, 'type': 'embedding'}}}, 'type': 'onenet'} and extras {'vocab': Vocabulary with namespaces:  intent_labels, Size: 711 || labels, Size: 51 || tokens, Size: 18816 || domain_labels, Size: 10 || token_characters, Size: 90 || Non Padded Namespaces: {'*labels', '*tags'}}
+[2020-10-29 19:42:24,382 PID:3513 INFO params.py pop] model.type = onenet
+[2020-10-29 19:42:24,382 PID:3513 INFO from_params.py from_params] instantiating class <class 'convlab.modules.nlu.multiwoz.onenet.model.OneNet'> from params {'dropout': 0.5, 'encoder': {'bidirectional': True, 'dropout': 0.5, 'hidden_size': 200, 'input_size': 178, 'num_layers': 2, 'type': 'lstm'}, 'include_start_end_transitions': False, 'label_encoding': 'BIO', 'regularizer': [['scalar_parameters', {'alpha': 0.1, 'type': 'l2'}]], 'text_field_embedder': {'token_embedders': {'token_characters': {'embedding': {'embedding_dim': 16}, 'encoder': {'conv_layer_activation': 'relu', 'embedding_dim': 16, 'ngram_filter_sizes': [3], 'num_filters': 128, 'type': 'cnn'}, 'type': 'character_encoding'}, 'tokens': {'embedding_dim': 50, 'trainable': True, 'type': 'embedding'}}}} and extras {'vocab': Vocabulary with namespaces:  intent_labels, Size: 711 || labels, Size: 51 || tokens, Size: 18816 || domain_labels, Size: 10 || token_characters, Size: 90 || Non Padded Namespaces: {'*labels', '*tags'}}
+[2020-10-29 19:42:24,383 PID:3513 INFO from_params.py from_params] instantiating class <class 'allennlp.modules.text_field_embedders.text_field_embedder.TextFieldEmbedder'> from params {'token_embedders': {'token_characters': {'embedding': {'embedding_dim': 16}, 'encoder': {'conv_layer_activation': 'relu', 'embedding_dim': 16, 'ngram_filter_sizes': [3], 'num_filters': 128, 'type': 'cnn'}, 'type': 'character_encoding'}, 'tokens': {'embedding_dim': 50, 'trainable': True, 'type': 'embedding'}}} and extras {'vocab': Vocabulary with namespaces:  intent_labels, Size: 711 || labels, Size: 51 || tokens, Size: 18816 || domain_labels, Size: 10 || token_characters, Size: 90 || Non Padded Namespaces: {'*labels', '*tags'}}
+[2020-10-29 19:42:24,383 PID:3513 INFO params.py pop] model.text_field_embedder.type = basic
+[2020-10-29 19:42:24,383 PID:3513 INFO params.py pop] model.text_field_embedder.embedder_to_indexer_map = None
+[2020-10-29 19:42:24,384 PID:3513 INFO params.py pop] model.text_field_embedder.allow_unmatched_keys = False
+[2020-10-29 19:42:24,384 PID:3513 INFO from_params.py from_params] instantiating class <class 'allennlp.modules.token_embedders.token_embedder.TokenEmbedder'> from params {'embedding': {'embedding_dim': 16}, 'encoder': {'conv_layer_activation': 'relu', 'embedding_dim': 16, 'ngram_filter_sizes': [3], 'num_filters': 128, 'type': 'cnn'}, 'type': 'character_encoding'} and extras {'vocab': Vocabulary with namespaces:  intent_labels, Size: 711 || labels, Size: 51 || tokens, Size: 18816 || domain_labels, Size: 10 || token_characters, Size: 90 || Non Padded Namespaces: {'*labels', '*tags'}}
+[2020-10-29 19:42:24,384 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.type = character_encoding
+[2020-10-29 19:42:24,384 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.embedding.num_embeddings = None
+[2020-10-29 19:42:24,385 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.embedding.vocab_namespace = token_characters
+[2020-10-29 19:42:24,385 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.embedding.embedding_dim = 16
+[2020-10-29 19:42:24,385 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.embedding.pretrained_file = None
+[2020-10-29 19:42:24,385 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.embedding.projection_dim = None
+[2020-10-29 19:42:24,385 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.embedding.trainable = True
+[2020-10-29 19:42:24,385 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.embedding.padding_index = None
+[2020-10-29 19:42:24,386 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.embedding.max_norm = None
+[2020-10-29 19:42:24,386 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.embedding.norm_type = 2.0
+[2020-10-29 19:42:24,386 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.embedding.scale_grad_by_freq = False
+[2020-10-29 19:42:24,386 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.embedding.sparse = False
+[2020-10-29 19:42:24,388 PID:3513 INFO from_params.py from_params] instantiating class <class 'allennlp.modules.seq2vec_encoders.seq2vec_encoder.Seq2VecEncoder'> from params {'conv_layer_activation': 'relu', 'embedding_dim': 16, 'ngram_filter_sizes': [3], 'num_filters': 128, 'type': 'cnn'} and extras {}
+[2020-10-29 19:42:24,388 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.encoder.type = cnn
+[2020-10-29 19:42:24,388 PID:3513 INFO from_params.py from_params] instantiating class <class 'allennlp.modules.seq2vec_encoders.cnn_encoder.CnnEncoder'> from params {'conv_layer_activation': 'relu', 'embedding_dim': 16, 'ngram_filter_sizes': [3], 'num_filters': 128} and extras {}
+[2020-10-29 19:42:24,388 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.encoder.embedding_dim = 16
+[2020-10-29 19:42:24,389 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.encoder.num_filters = 128
+[2020-10-29 19:42:24,389 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.encoder.ngram_filter_sizes = [3]
+[2020-10-29 19:42:24,389 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.encoder.conv_layer_activation = relu
+[2020-10-29 19:42:24,389 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.encoder.output_dim = None
+[2020-10-29 19:42:24,396 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.dropout = 0.0
+[2020-10-29 19:42:24,396 PID:3513 INFO from_params.py from_params] instantiating class <class 'allennlp.modules.token_embedders.token_embedder.TokenEmbedder'> from params {'embedding_dim': 50, 'trainable': True, 'type': 'embedding'} and extras {'vocab': Vocabulary with namespaces:  intent_labels, Size: 711 || labels, Size: 51 || tokens, Size: 18816 || domain_labels, Size: 10 || token_characters, Size: 90 || Non Padded Namespaces: {'*labels', '*tags'}}
+[2020-10-29 19:42:24,397 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.tokens.type = embedding
+[2020-10-29 19:42:24,397 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.tokens.num_embeddings = None
+[2020-10-29 19:42:24,397 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.tokens.vocab_namespace = tokens
+[2020-10-29 19:42:24,397 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.tokens.embedding_dim = 50
+[2020-10-29 19:42:24,397 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.tokens.pretrained_file = None
+[2020-10-29 19:42:24,397 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.tokens.projection_dim = None
+[2020-10-29 19:42:24,398 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.tokens.trainable = True
+[2020-10-29 19:42:24,398 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.tokens.padding_index = None
+[2020-10-29 19:42:24,398 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.tokens.max_norm = None
+[2020-10-29 19:42:24,398 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.tokens.norm_type = 2.0
+[2020-10-29 19:42:24,398 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.tokens.scale_grad_by_freq = False
+[2020-10-29 19:42:24,398 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.tokens.sparse = False
+[2020-10-29 19:42:24,416 PID:3513 INFO from_params.py from_params] instantiating class <class 'allennlp.modules.seq2seq_encoders.seq2seq_encoder.Seq2SeqEncoder'> from params {'bidirectional': True, 'dropout': 0.5, 'hidden_size': 200, 'input_size': 178, 'num_layers': 2, 'type': 'lstm'} and extras {'vocab': Vocabulary with namespaces:  intent_labels, Size: 711 || labels, Size: 51 || tokens, Size: 18816 || domain_labels, Size: 10 || token_characters, Size: 90 || Non Padded Namespaces: {'*labels', '*tags'}}
+[2020-10-29 19:42:24,416 PID:3513 INFO params.py pop] model.encoder.type = lstm
+[2020-10-29 19:42:24,416 PID:3513 INFO params.py pop] model.encoder.batch_first = True
+[2020-10-29 19:42:24,417 PID:3513 INFO params.py pop] model.encoder.stateful = False
+[2020-10-29 19:42:24,417 PID:3513 INFO params.py as_dict] Converting Params object to dict; logging of default values will not occur when dictionary parameters are used subsequently.
+[2020-10-29 19:42:24,417 PID:3513 INFO params.py as_dict] CURRENTLY DEFINED PARAMETERS: 
+[2020-10-29 19:42:24,417 PID:3513 INFO params.py log_recursively] model.encoder.bidirectional = True
+[2020-10-29 19:42:24,417 PID:3513 INFO params.py log_recursively] model.encoder.dropout = 0.5
+[2020-10-29 19:42:24,417 PID:3513 INFO params.py log_recursively] model.encoder.hidden_size = 200
+[2020-10-29 19:42:24,417 PID:3513 INFO params.py log_recursively] model.encoder.input_size = 178
+[2020-10-29 19:42:24,418 PID:3513 INFO params.py log_recursively] model.encoder.num_layers = 2
+[2020-10-29 19:42:24,418 PID:3513 INFO params.py log_recursively] model.encoder.batch_first = True
+[2020-10-29 19:42:24,447 PID:3513 INFO params.py pop] model.tag_label_namespace = labels
+[2020-10-29 19:42:24,447 PID:3513 INFO params.py pop] model.domain_label_namespace = domain_labels
+[2020-10-29 19:42:24,448 PID:3513 INFO params.py pop] model.intent_label_namespace = intent_labels
+[2020-10-29 19:42:24,448 PID:3513 INFO params.py pop] model.label_encoding = BIO
+[2020-10-29 19:42:24,448 PID:3513 INFO params.py pop] model.include_start_end_transitions = False
+[2020-10-29 19:42:24,448 PID:3513 INFO params.py pop] model.crf_decoding = False
+[2020-10-29 19:42:24,448 PID:3513 INFO params.py pop] model.constrain_crf_decoding = None
+[2020-10-29 19:42:24,449 PID:3513 INFO params.py pop] model.focal_loss_gamma = None
+[2020-10-29 19:42:24,449 PID:3513 INFO params.py pop] model.calculate_span_f1 = None
+[2020-10-29 19:42:24,449 PID:3513 INFO params.py pop] model.dropout = 0.5
+[2020-10-29 19:42:24,449 PID:3513 INFO params.py pop] model.verbose_metrics = False
+[2020-10-29 19:42:24,449 PID:3513 INFO params.py pop] model.regularizer = [['scalar_parameters', {'alpha': 0.1, 'type': 'l2'}]]
+[2020-10-29 19:42:24,450 PID:3513 INFO params.py pop] model.regularizer.list.list.type = l2
+[2020-10-29 19:42:24,461 PID:3513 INFO initializers.py __call__] Initializing parameters
+[2020-10-29 19:42:24,461 PID:3513 INFO initializers.py __call__] Done initializing parameters; the following parameters are using their default initialization from their code
+[2020-10-29 19:42:24,462 PID:3513 INFO initializers.py __call__]    domain_projection_layer.bias
+[2020-10-29 19:42:24,462 PID:3513 INFO initializers.py __call__]    domain_projection_layer.weight
+[2020-10-29 19:42:24,462 PID:3513 INFO initializers.py __call__]    encoder._module.bias_hh_l0
+[2020-10-29 19:42:24,462 PID:3513 INFO initializers.py __call__]    encoder._module.bias_hh_l0_reverse
+[2020-10-29 19:42:24,462 PID:3513 INFO initializers.py __call__]    encoder._module.bias_hh_l1
+[2020-10-29 19:42:24,462 PID:3513 INFO initializers.py __call__]    encoder._module.bias_hh_l1_reverse
+[2020-10-29 19:42:24,463 PID:3513 INFO initializers.py __call__]    encoder._module.bias_ih_l0
+[2020-10-29 19:42:24,463 PID:3513 INFO initializers.py __call__]    encoder._module.bias_ih_l0_reverse
+[2020-10-29 19:42:24,463 PID:3513 INFO initializers.py __call__]    encoder._module.bias_ih_l1
+[2020-10-29 19:42:24,463 PID:3513 INFO initializers.py __call__]    encoder._module.bias_ih_l1_reverse
+[2020-10-29 19:42:24,463 PID:3513 INFO initializers.py __call__]    encoder._module.weight_hh_l0
+[2020-10-29 19:42:24,463 PID:3513 INFO initializers.py __call__]    encoder._module.weight_hh_l0_reverse
+[2020-10-29 19:42:24,463 PID:3513 INFO initializers.py __call__]    encoder._module.weight_hh_l1
+[2020-10-29 19:42:24,463 PID:3513 INFO initializers.py __call__]    encoder._module.weight_hh_l1_reverse
+[2020-10-29 19:42:24,464 PID:3513 INFO initializers.py __call__]    encoder._module.weight_ih_l0
+[2020-10-29 19:42:24,464 PID:3513 INFO initializers.py __call__]    encoder._module.weight_ih_l0_reverse
+[2020-10-29 19:42:24,464 PID:3513 INFO initializers.py __call__]    encoder._module.weight_ih_l1
+[2020-10-29 19:42:24,464 PID:3513 INFO initializers.py __call__]    encoder._module.weight_ih_l1_reverse
+[2020-10-29 19:42:24,464 PID:3513 INFO initializers.py __call__]    intent_projection_layer.bias
+[2020-10-29 19:42:24,464 PID:3513 INFO initializers.py __call__]    intent_projection_layer.weight
+[2020-10-29 19:42:24,464 PID:3513 INFO initializers.py __call__]    tag_projection_layer._module.bias
+[2020-10-29 19:42:24,465 PID:3513 INFO initializers.py __call__]    tag_projection_layer._module.weight
+[2020-10-29 19:42:24,465 PID:3513 INFO initializers.py __call__]    text_field_embedder.token_embedder_token_characters._embedding._module.weight
+[2020-10-29 19:42:24,465 PID:3513 INFO initializers.py __call__]    text_field_embedder.token_embedder_token_characters._encoder._module.conv_layer_0.bias
+[2020-10-29 19:42:24,465 PID:3513 INFO initializers.py __call__]    text_field_embedder.token_embedder_token_characters._encoder._module.conv_layer_0.weight
+[2020-10-29 19:42:24,465 PID:3513 INFO initializers.py __call__]    text_field_embedder.token_embedder_tokens.weight
+[2020-10-29 19:42:24,507 PID:3513 WARNING util.py get_spacy_model] Spacy models 'en_core_web_sm' not found.  Downloading and installing.
+[2020-10-29 20:16:10,434 PID:3513 INFO from_params.py from_params] instantiating class <class 'allennlp.data.dataset_readers.dataset_reader.DatasetReader'> from params {'token_indexers': {'token_characters': {'min_padding_length': 3, 'type': 'characters'}, 'tokens': {'lowercase_tokens': True, 'type': 'single_id'}}, 'type': 'onenet'} and extras {}
+[2020-10-29 20:16:10,435 PID:3513 INFO params.py pop] dataset_reader.type = onenet
+[2020-10-29 20:16:10,436 PID:3513 INFO from_params.py from_params] instantiating class <class 'convlab.modules.nlu.multiwoz.onenet.dataset_reader.OneNetDatasetReader'> from params {'token_indexers': {'token_characters': {'min_padding_length': 3, 'type': 'characters'}, 'tokens': {'lowercase_tokens': True, 'type': 'single_id'}}} and extras {}
+[2020-10-29 20:16:10,436 PID:3513 INFO params.py pop] dataset_reader.token_delimiter = None
+[2020-10-29 20:16:10,436 PID:3513 INFO from_params.py from_params] instantiating class allennlp.data.token_indexers.token_indexer.TokenIndexer from params {'min_padding_length': 3, 'type': 'characters'} and extras {}
+[2020-10-29 20:16:10,437 PID:3513 INFO params.py pop] dataset_reader.token_indexers.token_characters.type = characters
+[2020-10-29 20:16:10,437 PID:3513 INFO from_params.py from_params] instantiating class allennlp.data.token_indexers.token_characters_indexer.TokenCharactersIndexer from params {'min_padding_length': 3} and extras {}
+[2020-10-29 20:16:10,437 PID:3513 INFO params.py pop] dataset_reader.token_indexers.token_characters.namespace = token_characters
+[2020-10-29 20:16:10,437 PID:3513 INFO params.py pop] dataset_reader.token_indexers.token_characters.start_tokens = None
+[2020-10-29 20:16:10,437 PID:3513 INFO params.py pop] dataset_reader.token_indexers.token_characters.end_tokens = None
+[2020-10-29 20:16:10,437 PID:3513 INFO params.py pop] dataset_reader.token_indexers.token_characters.min_padding_length = 3
+[2020-10-29 20:16:10,438 PID:3513 INFO from_params.py from_params] instantiating class allennlp.data.token_indexers.token_indexer.TokenIndexer from params {'lowercase_tokens': True, 'type': 'single_id'} and extras {}
+[2020-10-29 20:16:10,438 PID:3513 INFO params.py pop] dataset_reader.token_indexers.tokens.type = single_id
+[2020-10-29 20:16:10,438 PID:3513 INFO from_params.py from_params] instantiating class allennlp.data.token_indexers.single_id_token_indexer.SingleIdTokenIndexer from params {'lowercase_tokens': True} and extras {}
+[2020-10-29 20:16:10,438 PID:3513 INFO params.py pop] dataset_reader.token_indexers.tokens.namespace = tokens
+[2020-10-29 20:16:10,438 PID:3513 INFO params.py pop] dataset_reader.token_indexers.tokens.lowercase_tokens = True
+[2020-10-29 20:16:10,438 PID:3513 INFO params.py pop] dataset_reader.token_indexers.tokens.start_tokens = None
+[2020-10-29 20:16:10,438 PID:3513 INFO params.py pop] dataset_reader.token_indexers.tokens.end_tokens = None
+[2020-10-29 20:16:10,438 PID:3513 INFO params.py pop] dataset_reader.lazy = False
+[2020-10-29 20:16:10,506 PID:3513 INFO multiwoz.py __init__] MultiWozEnv:
+- e = 0
+- done = False
+- env_spec = {'max_frame': 1000,
+ 'max_t': 40,
+ 'name': 'multiwoz',
+ 'nlg': {'is_user': True, 'name': 'MultiwozTemplateNLG'},
+ 'nlu': {'model_file': 'https://convlab.blob.core.windows.net/models/onenet.tar.gz',
+         'name': 'OneNetLU'},
+ 'sys_policy': {'name': 'RuleBasedMultiwozBot'},
+ 'user_policy': {'name': 'UserPolicyAgendaMultiWoz'}}
+- log_frequency = None
+- frame_op = None
+- frame_op_len = None
+- normalize_state = False
+- reward_scale = None
+- num_envs = 1
+- eval_frequency = 1000
+- name = multiwoz
+- max_t = 40
+- max_frame = 1000
+- is_venv = False
+- clock_speed = 1
+- clock = <convlab.env.base.Clock object at 0x7fdc7d531cf8>
+- to_render = False
+- action_dim = 0
+- observation_dim = 0
+- u_env = <convlab.env.multiwoz.MultiWozEnvironment object at 0x7fdd1c3737f0>
+- evaluator = None
+- observation_space = Box(0,)
+- action_space = Discrete(0)
+- observable_dim = {'state': 0}
+- is_discrete = True
+[2020-10-29 20:16:12,194 PID:3513 INFO archival.py load_archive] loading archive file /home/bool_tbb/.convlab/cache/d89430f1db7757ade4c5dac2c97f56f668a5db9fef53c78248053676856cd80d.8c3827d5e22ccc6cc146fb601e3551458283e3a5188d3b2e95b6f46a90f24e52
+[2020-10-29 20:16:12,194 PID:3513 INFO archival.py load_archive] extracting archive file /home/bool_tbb/.convlab/cache/d89430f1db7757ade4c5dac2c97f56f668a5db9fef53c78248053676856cd80d.8c3827d5e22ccc6cc146fb601e3551458283e3a5188d3b2e95b6f46a90f24e52 to temp dir /tmp/tmp8lff00s8
+[2020-10-29 20:16:12,326 PID:3513 INFO params.py pop] type = default
+[2020-10-29 20:16:12,326 PID:3513 INFO vocabulary.py from_files] Loading token dictionary from /tmp/tmp8lff00s8/vocabulary.
+[2020-10-29 20:16:12,345 PID:3513 INFO from_params.py from_params] instantiating class <class 'allennlp.models.model.Model'> from params {'dropout': 0.5, 'encoder': {'bidirectional': True, 'dropout': 0.5, 'hidden_size': 200, 'input_size': 178, 'num_layers': 2, 'type': 'lstm'}, 'include_start_end_transitions': False, 'label_encoding': 'BIO', 'regularizer': [['scalar_parameters', {'alpha': 0.1, 'type': 'l2'}]], 'text_field_embedder': {'token_embedders': {'token_characters': {'embedding': {'embedding_dim': 16}, 'encoder': {'conv_layer_activation': 'relu', 'embedding_dim': 16, 'ngram_filter_sizes': [3], 'num_filters': 128, 'type': 'cnn'}, 'type': 'character_encoding'}, 'tokens': {'embedding_dim': 50, 'trainable': True, 'type': 'embedding'}}}, 'type': 'onenet'} and extras {'vocab': Vocabulary with namespaces:  intent_labels, Size: 711 || labels, Size: 51 || tokens, Size: 18816 || domain_labels, Size: 10 || token_characters, Size: 90 || Non Padded Namespaces: {'*labels', '*tags'}}
+[2020-10-29 20:16:12,345 PID:3513 INFO params.py pop] model.type = onenet
+[2020-10-29 20:16:12,345 PID:3513 INFO from_params.py from_params] instantiating class <class 'convlab.modules.nlu.multiwoz.onenet.model.OneNet'> from params {'dropout': 0.5, 'encoder': {'bidirectional': True, 'dropout': 0.5, 'hidden_size': 200, 'input_size': 178, 'num_layers': 2, 'type': 'lstm'}, 'include_start_end_transitions': False, 'label_encoding': 'BIO', 'regularizer': [['scalar_parameters', {'alpha': 0.1, 'type': 'l2'}]], 'text_field_embedder': {'token_embedders': {'token_characters': {'embedding': {'embedding_dim': 16}, 'encoder': {'conv_layer_activation': 'relu', 'embedding_dim': 16, 'ngram_filter_sizes': [3], 'num_filters': 128, 'type': 'cnn'}, 'type': 'character_encoding'}, 'tokens': {'embedding_dim': 50, 'trainable': True, 'type': 'embedding'}}}} and extras {'vocab': Vocabulary with namespaces:  intent_labels, Size: 711 || labels, Size: 51 || tokens, Size: 18816 || domain_labels, Size: 10 || token_characters, Size: 90 || Non Padded Namespaces: {'*labels', '*tags'}}
+[2020-10-29 20:16:12,346 PID:3513 INFO from_params.py from_params] instantiating class <class 'allennlp.modules.text_field_embedders.text_field_embedder.TextFieldEmbedder'> from params {'token_embedders': {'token_characters': {'embedding': {'embedding_dim': 16}, 'encoder': {'conv_layer_activation': 'relu', 'embedding_dim': 16, 'ngram_filter_sizes': [3], 'num_filters': 128, 'type': 'cnn'}, 'type': 'character_encoding'}, 'tokens': {'embedding_dim': 50, 'trainable': True, 'type': 'embedding'}}} and extras {'vocab': Vocabulary with namespaces:  intent_labels, Size: 711 || labels, Size: 51 || tokens, Size: 18816 || domain_labels, Size: 10 || token_characters, Size: 90 || Non Padded Namespaces: {'*labels', '*tags'}}
+[2020-10-29 20:16:12,346 PID:3513 INFO params.py pop] model.text_field_embedder.type = basic
+[2020-10-29 20:16:12,346 PID:3513 INFO params.py pop] model.text_field_embedder.embedder_to_indexer_map = None
+[2020-10-29 20:16:12,346 PID:3513 INFO params.py pop] model.text_field_embedder.allow_unmatched_keys = False
+[2020-10-29 20:16:12,346 PID:3513 INFO from_params.py from_params] instantiating class <class 'allennlp.modules.token_embedders.token_embedder.TokenEmbedder'> from params {'embedding': {'embedding_dim': 16}, 'encoder': {'conv_layer_activation': 'relu', 'embedding_dim': 16, 'ngram_filter_sizes': [3], 'num_filters': 128, 'type': 'cnn'}, 'type': 'character_encoding'} and extras {'vocab': Vocabulary with namespaces:  intent_labels, Size: 711 || labels, Size: 51 || tokens, Size: 18816 || domain_labels, Size: 10 || token_characters, Size: 90 || Non Padded Namespaces: {'*labels', '*tags'}}
+[2020-10-29 20:16:12,347 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.type = character_encoding
+[2020-10-29 20:16:12,347 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.embedding.num_embeddings = None
+[2020-10-29 20:16:12,347 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.embedding.vocab_namespace = token_characters
+[2020-10-29 20:16:12,347 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.embedding.embedding_dim = 16
+[2020-10-29 20:16:12,347 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.embedding.pretrained_file = None
+[2020-10-29 20:16:12,347 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.embedding.projection_dim = None
+[2020-10-29 20:16:12,347 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.embedding.trainable = True
+[2020-10-29 20:16:12,347 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.embedding.padding_index = None
+[2020-10-29 20:16:12,348 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.embedding.max_norm = None
+[2020-10-29 20:16:12,348 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.embedding.norm_type = 2.0
+[2020-10-29 20:16:12,348 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.embedding.scale_grad_by_freq = False
+[2020-10-29 20:16:12,348 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.embedding.sparse = False
+[2020-10-29 20:16:12,348 PID:3513 INFO from_params.py from_params] instantiating class <class 'allennlp.modules.seq2vec_encoders.seq2vec_encoder.Seq2VecEncoder'> from params {'conv_layer_activation': 'relu', 'embedding_dim': 16, 'ngram_filter_sizes': [3], 'num_filters': 128, 'type': 'cnn'} and extras {}
+[2020-10-29 20:16:12,349 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.encoder.type = cnn
+[2020-10-29 20:16:12,349 PID:3513 INFO from_params.py from_params] instantiating class <class 'allennlp.modules.seq2vec_encoders.cnn_encoder.CnnEncoder'> from params {'conv_layer_activation': 'relu', 'embedding_dim': 16, 'ngram_filter_sizes': [3], 'num_filters': 128} and extras {}
+[2020-10-29 20:16:12,349 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.encoder.embedding_dim = 16
+[2020-10-29 20:16:12,349 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.encoder.num_filters = 128
+[2020-10-29 20:16:12,349 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.encoder.ngram_filter_sizes = [3]
+[2020-10-29 20:16:12,349 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.encoder.conv_layer_activation = relu
+[2020-10-29 20:16:12,350 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.encoder.output_dim = None
+[2020-10-29 20:16:12,350 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.dropout = 0.0
+[2020-10-29 20:16:12,350 PID:3513 INFO from_params.py from_params] instantiating class <class 'allennlp.modules.token_embedders.token_embedder.TokenEmbedder'> from params {'embedding_dim': 50, 'trainable': True, 'type': 'embedding'} and extras {'vocab': Vocabulary with namespaces:  intent_labels, Size: 711 || labels, Size: 51 || tokens, Size: 18816 || domain_labels, Size: 10 || token_characters, Size: 90 || Non Padded Namespaces: {'*labels', '*tags'}}
+[2020-10-29 20:16:12,351 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.tokens.type = embedding
+[2020-10-29 20:16:12,351 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.tokens.num_embeddings = None
+[2020-10-29 20:16:12,351 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.tokens.vocab_namespace = tokens
+[2020-10-29 20:16:12,351 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.tokens.embedding_dim = 50
+[2020-10-29 20:16:12,351 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.tokens.pretrained_file = None
+[2020-10-29 20:16:12,351 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.tokens.projection_dim = None
+[2020-10-29 20:16:12,351 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.tokens.trainable = True
+[2020-10-29 20:16:12,351 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.tokens.padding_index = None
+[2020-10-29 20:16:12,351 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.tokens.max_norm = None
+[2020-10-29 20:16:12,351 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.tokens.norm_type = 2.0
+[2020-10-29 20:16:12,352 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.tokens.scale_grad_by_freq = False
+[2020-10-29 20:16:12,352 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.tokens.sparse = False
+[2020-10-29 20:16:12,361 PID:3513 INFO from_params.py from_params] instantiating class <class 'allennlp.modules.seq2seq_encoders.seq2seq_encoder.Seq2SeqEncoder'> from params {'bidirectional': True, 'dropout': 0.5, 'hidden_size': 200, 'input_size': 178, 'num_layers': 2, 'type': 'lstm'} and extras {'vocab': Vocabulary with namespaces:  intent_labels, Size: 711 || labels, Size: 51 || tokens, Size: 18816 || domain_labels, Size: 10 || token_characters, Size: 90 || Non Padded Namespaces: {'*labels', '*tags'}}
+[2020-10-29 20:16:12,361 PID:3513 INFO params.py pop] model.encoder.type = lstm
+[2020-10-29 20:16:12,361 PID:3513 INFO params.py pop] model.encoder.batch_first = True
+[2020-10-29 20:16:12,361 PID:3513 INFO params.py pop] model.encoder.stateful = False
+[2020-10-29 20:16:12,362 PID:3513 INFO params.py as_dict] Converting Params object to dict; logging of default values will not occur when dictionary parameters are used subsequently.
+[2020-10-29 20:16:12,362 PID:3513 INFO params.py as_dict] CURRENTLY DEFINED PARAMETERS: 
+[2020-10-29 20:16:12,362 PID:3513 INFO params.py log_recursively] model.encoder.bidirectional = True
+[2020-10-29 20:16:12,362 PID:3513 INFO params.py log_recursively] model.encoder.dropout = 0.5
+[2020-10-29 20:16:12,362 PID:3513 INFO params.py log_recursively] model.encoder.hidden_size = 200
+[2020-10-29 20:16:12,362 PID:3513 INFO params.py log_recursively] model.encoder.input_size = 178
+[2020-10-29 20:16:12,362 PID:3513 INFO params.py log_recursively] model.encoder.num_layers = 2
+[2020-10-29 20:16:12,362 PID:3513 INFO params.py log_recursively] model.encoder.batch_first = True
+[2020-10-29 20:16:12,378 PID:3513 INFO params.py pop] model.tag_label_namespace = labels
+[2020-10-29 20:16:12,379 PID:3513 INFO params.py pop] model.domain_label_namespace = domain_labels
+[2020-10-29 20:16:12,379 PID:3513 INFO params.py pop] model.intent_label_namespace = intent_labels
+[2020-10-29 20:16:12,379 PID:3513 INFO params.py pop] model.label_encoding = BIO
+[2020-10-29 20:16:12,379 PID:3513 INFO params.py pop] model.include_start_end_transitions = False
+[2020-10-29 20:16:12,379 PID:3513 INFO params.py pop] model.crf_decoding = False
+[2020-10-29 20:16:12,379 PID:3513 INFO params.py pop] model.constrain_crf_decoding = None
+[2020-10-29 20:16:12,379 PID:3513 INFO params.py pop] model.focal_loss_gamma = None
+[2020-10-29 20:16:12,379 PID:3513 INFO params.py pop] model.calculate_span_f1 = None
+[2020-10-29 20:16:12,380 PID:3513 INFO params.py pop] model.dropout = 0.5
+[2020-10-29 20:16:12,380 PID:3513 INFO params.py pop] model.verbose_metrics = False
+[2020-10-29 20:16:12,380 PID:3513 INFO params.py pop] model.regularizer = [['scalar_parameters', {'alpha': 0.1, 'type': 'l2'}]]
+[2020-10-29 20:16:12,380 PID:3513 INFO params.py pop] model.regularizer.list.list.type = l2
+[2020-10-29 20:16:12,386 PID:3513 INFO initializers.py __call__] Initializing parameters
+[2020-10-29 20:16:12,387 PID:3513 INFO initializers.py __call__] Done initializing parameters; the following parameters are using their default initialization from their code
+[2020-10-29 20:16:12,387 PID:3513 INFO initializers.py __call__]    domain_projection_layer.bias
+[2020-10-29 20:16:12,387 PID:3513 INFO initializers.py __call__]    domain_projection_layer.weight
+[2020-10-29 20:16:12,387 PID:3513 INFO initializers.py __call__]    encoder._module.bias_hh_l0
+[2020-10-29 20:16:12,387 PID:3513 INFO initializers.py __call__]    encoder._module.bias_hh_l0_reverse
+[2020-10-29 20:16:12,387 PID:3513 INFO initializers.py __call__]    encoder._module.bias_hh_l1
+[2020-10-29 20:16:12,387 PID:3513 INFO initializers.py __call__]    encoder._module.bias_hh_l1_reverse
+[2020-10-29 20:16:12,387 PID:3513 INFO initializers.py __call__]    encoder._module.bias_ih_l0
+[2020-10-29 20:16:12,387 PID:3513 INFO initializers.py __call__]    encoder._module.bias_ih_l0_reverse
+[2020-10-29 20:16:12,387 PID:3513 INFO initializers.py __call__]    encoder._module.bias_ih_l1
+[2020-10-29 20:16:12,388 PID:3513 INFO initializers.py __call__]    encoder._module.bias_ih_l1_reverse
+[2020-10-29 20:16:12,388 PID:3513 INFO initializers.py __call__]    encoder._module.weight_hh_l0
+[2020-10-29 20:16:12,388 PID:3513 INFO initializers.py __call__]    encoder._module.weight_hh_l0_reverse
+[2020-10-29 20:16:12,388 PID:3513 INFO initializers.py __call__]    encoder._module.weight_hh_l1
+[2020-10-29 20:16:12,388 PID:3513 INFO initializers.py __call__]    encoder._module.weight_hh_l1_reverse
+[2020-10-29 20:16:12,388 PID:3513 INFO initializers.py __call__]    encoder._module.weight_ih_l0
+[2020-10-29 20:16:12,388 PID:3513 INFO initializers.py __call__]    encoder._module.weight_ih_l0_reverse
+[2020-10-29 20:16:12,388 PID:3513 INFO initializers.py __call__]    encoder._module.weight_ih_l1
+[2020-10-29 20:16:12,388 PID:3513 INFO initializers.py __call__]    encoder._module.weight_ih_l1_reverse
+[2020-10-29 20:16:12,388 PID:3513 INFO initializers.py __call__]    intent_projection_layer.bias
+[2020-10-29 20:16:12,388 PID:3513 INFO initializers.py __call__]    intent_projection_layer.weight
+[2020-10-29 20:16:12,389 PID:3513 INFO initializers.py __call__]    tag_projection_layer._module.bias
+[2020-10-29 20:16:12,389 PID:3513 INFO initializers.py __call__]    tag_projection_layer._module.weight
+[2020-10-29 20:16:12,389 PID:3513 INFO initializers.py __call__]    text_field_embedder.token_embedder_token_characters._embedding._module.weight
+[2020-10-29 20:16:12,389 PID:3513 INFO initializers.py __call__]    text_field_embedder.token_embedder_token_characters._encoder._module.conv_layer_0.bias
+[2020-10-29 20:16:12,389 PID:3513 INFO initializers.py __call__]    text_field_embedder.token_embedder_token_characters._encoder._module.conv_layer_0.weight
+[2020-10-29 20:16:12,389 PID:3513 INFO initializers.py __call__]    text_field_embedder.token_embedder_tokens.weight
+[2020-10-29 20:16:12,400 PID:3513 INFO from_params.py from_params] instantiating class <class 'allennlp.data.dataset_readers.dataset_reader.DatasetReader'> from params {'token_indexers': {'token_characters': {'min_padding_length': 3, 'type': 'characters'}, 'tokens': {'lowercase_tokens': True, 'type': 'single_id'}}, 'type': 'onenet'} and extras {}
+[2020-10-29 20:16:12,400 PID:3513 INFO params.py pop] dataset_reader.type = onenet
+[2020-10-29 20:16:12,401 PID:3513 INFO from_params.py from_params] instantiating class <class 'convlab.modules.nlu.multiwoz.onenet.dataset_reader.OneNetDatasetReader'> from params {'token_indexers': {'token_characters': {'min_padding_length': 3, 'type': 'characters'}, 'tokens': {'lowercase_tokens': True, 'type': 'single_id'}}} and extras {}
+[2020-10-29 20:16:12,401 PID:3513 INFO params.py pop] dataset_reader.token_delimiter = None
+[2020-10-29 20:16:12,401 PID:3513 INFO from_params.py from_params] instantiating class allennlp.data.token_indexers.token_indexer.TokenIndexer from params {'min_padding_length': 3, 'type': 'characters'} and extras {}
+[2020-10-29 20:16:12,401 PID:3513 INFO params.py pop] dataset_reader.token_indexers.token_characters.type = characters
+[2020-10-29 20:16:12,401 PID:3513 INFO from_params.py from_params] instantiating class allennlp.data.token_indexers.token_characters_indexer.TokenCharactersIndexer from params {'min_padding_length': 3} and extras {}
+[2020-10-29 20:16:12,402 PID:3513 INFO params.py pop] dataset_reader.token_indexers.token_characters.namespace = token_characters
+[2020-10-29 20:16:12,402 PID:3513 INFO params.py pop] dataset_reader.token_indexers.token_characters.start_tokens = None
+[2020-10-29 20:16:12,402 PID:3513 INFO params.py pop] dataset_reader.token_indexers.token_characters.end_tokens = None
+[2020-10-29 20:16:12,402 PID:3513 INFO params.py pop] dataset_reader.token_indexers.token_characters.min_padding_length = 3
+[2020-10-29 20:16:12,402 PID:3513 INFO from_params.py from_params] instantiating class allennlp.data.token_indexers.token_indexer.TokenIndexer from params {'lowercase_tokens': True, 'type': 'single_id'} and extras {}
+[2020-10-29 20:16:12,402 PID:3513 INFO params.py pop] dataset_reader.token_indexers.tokens.type = single_id
+[2020-10-29 20:16:12,402 PID:3513 INFO from_params.py from_params] instantiating class allennlp.data.token_indexers.single_id_token_indexer.SingleIdTokenIndexer from params {'lowercase_tokens': True} and extras {}
+[2020-10-29 20:16:12,403 PID:3513 INFO params.py pop] dataset_reader.token_indexers.tokens.namespace = tokens
+[2020-10-29 20:16:12,403 PID:3513 INFO params.py pop] dataset_reader.token_indexers.tokens.lowercase_tokens = True
+[2020-10-29 20:16:12,403 PID:3513 INFO params.py pop] dataset_reader.token_indexers.tokens.start_tokens = None
+[2020-10-29 20:16:12,403 PID:3513 INFO params.py pop] dataset_reader.token_indexers.tokens.end_tokens = None
+[2020-10-29 20:16:12,403 PID:3513 INFO params.py pop] dataset_reader.lazy = False
+[2020-10-29 20:16:12,440 PID:3513 INFO base.py __init__] ExternalPolicy:
+- agent = <convlab.agent.DialogAgent object at 0x7fdc6d5a4080>
+- algorithm_spec = {'action_pdtype': 'Argmax',
+ 'action_policy': 'default',
+ 'name': 'ExternalPolicy',
+ 'policy': {'name': 'RuleBasedMultiwozBot'}}
+- name = ExternalPolicy
+- net_spec = None
+- body = body: {
+  "agent": "<convlab.agent.DialogAgent object at 0x7fdc6d5a4080>",
+  "env": "<convlab.env.multiwoz.MultiWozEnv object at 0x7fdd1c0682e8>",
+  "aeb": "(0, 0, 0)",
+  "a": 0,
+  "e": 0,
+  "b": 0,
+  "explore_var": NaN,
+  "entropy_coef": NaN,
+  "loss": NaN,
+  "mean_entropy": NaN,
+  "mean_grad_norm": NaN,
+  "ckpt_total_reward": NaN,
+  "total_reward": 0,
+  "total_reward_ma": NaN,
+  "ma_window": 100,
+  "best_reward_ma": -Infinity,
+  "eval_reward_ma": NaN,
+  "train_df": "Empty DataFrame\nColumns: [epi, t, wall_t, opt_step, frame, fps, total_reward, avg_return, avg_len, avg_success, loss, lr, explore_var, entropy_coef, entropy, grad_norm]\nIndex: []",
+  "eval_df": "Empty DataFrame\nColumns: [epi, t, wall_t, opt_step, frame, fps, total_reward, avg_return, avg_len, avg_success, loss, lr, explore_var, entropy_coef, entropy, grad_norm]\nIndex: []",
+  "observation_space": "Box(0,)",
+  "action_space": "Discrete(0)",
+  "observable_dim": {
+    "state": 0
+  },
+  "state_dim": 0,
+  "action_dim": 0,
+  "is_discrete": true,
+  "action_type": "discrete",
+  "action_pdtype": "Argmax",
+  "ActionPD": "<class 'convlab.lib.distribution.Argmax'>"
+}
+- action_pdtype = Argmax
+- action_policy = <function default at 0x7fdd1ba6b488>
+- policy = <convlab.modules.policy.system.multiwoz.rule_based_multiwoz_bot.RuleBasedMultiwozBot object at 0x7fdc6d60c390>
+[2020-10-29 20:16:12,442 PID:3513 INFO __init__.py __init__] DialogAgent:
+- spec = onenet_rule_rule_template
+- a = 0
+- agent_spec = {'algorithm': {'action_pdtype': 'Argmax',
+               'action_policy': 'default',
+               'name': 'ExternalPolicy',
+               'policy': {'name': 'RuleBasedMultiwozBot'}},
+ 'dst': {'name': 'RuleDST'},
+ 'name': 'DialogAgent',
+ 'nlg': {'is_user': False, 'name': 'MultiwozTemplateNLG'},
+ 'nlu': {'model_file': 'https://convlab.blob.core.windows.net/models/onenet.tar.gz',
+         'name': 'OneNetLU'}}
+- name = DialogAgent
+- nlu = <convlab.modules.nlu.multiwoz.onenet.nlu.OneNetLU object at 0x7fdc6d5a4710>
+- dst = <convlab.modules.dst.multiwoz.rule_dst.RuleDST object at 0x7fdc6d60c908>
+- state_encoder = None
+- action_decoder = None
+- nlg = <convlab.modules.nlg.multiwoz.multiwoz_template_nlg.multiwoz_template_nlg.MultiwozTemplateNLG object at 0x7fdc6d60cbe0>
+- body = body: {
+  "agent": "<convlab.agent.DialogAgent object at 0x7fdc6d5a4080>",
+  "env": "<convlab.env.multiwoz.MultiWozEnv object at 0x7fdd1c0682e8>",
+  "aeb": "(0, 0, 0)",
+  "a": 0,
+  "e": 0,
+  "b": 0,
+  "explore_var": NaN,
+  "entropy_coef": NaN,
+  "loss": NaN,
+  "mean_entropy": NaN,
+  "mean_grad_norm": NaN,
+  "ckpt_total_reward": NaN,
+  "total_reward": 0,
+  "total_reward_ma": NaN,
+  "ma_window": 100,
+  "best_reward_ma": -Infinity,
+  "eval_reward_ma": NaN,
+  "train_df": "Empty DataFrame\nColumns: [epi, t, wall_t, opt_step, frame, fps, total_reward, avg_return, avg_len, avg_success, loss, lr, explore_var, entropy_coef, entropy, grad_norm]\nIndex: []",
+  "eval_df": "Empty DataFrame\nColumns: [epi, t, wall_t, opt_step, frame, fps, total_reward, avg_return, avg_len, avg_success, loss, lr, explore_var, entropy_coef, entropy, grad_norm]\nIndex: []",
+  "observation_space": "Box(0,)",
+  "action_space": "Discrete(0)",
+  "observable_dim": {
+    "state": 0
+  },
+  "state_dim": 0,
+  "action_dim": 0,
+  "is_discrete": true,
+  "action_type": "discrete",
+  "action_pdtype": "Argmax",
+  "ActionPD": "<class 'convlab.lib.distribution.Argmax'>",
+  "state": null,
+  "encoded_state": null,
+  "action": null
+}
+- algorithm = <convlab.agent.algorithm.external.ExternalPolicy object at 0x7fdc6c9fcd30>
+- warmup_epi = -1
+[2020-10-29 20:16:13,649 PID:3513 INFO archival.py load_archive] loading archive file /home/bool_tbb/.convlab/cache/d89430f1db7757ade4c5dac2c97f56f668a5db9fef53c78248053676856cd80d.8c3827d5e22ccc6cc146fb601e3551458283e3a5188d3b2e95b6f46a90f24e52
+[2020-10-29 20:16:13,650 PID:3513 INFO archival.py load_archive] extracting archive file /home/bool_tbb/.convlab/cache/d89430f1db7757ade4c5dac2c97f56f668a5db9fef53c78248053676856cd80d.8c3827d5e22ccc6cc146fb601e3551458283e3a5188d3b2e95b6f46a90f24e52 to temp dir /tmp/tmpxqlkw80g
+[2020-10-29 20:16:13,770 PID:3513 INFO params.py pop] type = default
+[2020-10-29 20:16:13,770 PID:3513 INFO vocabulary.py from_files] Loading token dictionary from /tmp/tmpxqlkw80g/vocabulary.
+[2020-10-29 20:16:13,787 PID:3513 INFO from_params.py from_params] instantiating class <class 'allennlp.models.model.Model'> from params {'dropout': 0.5, 'encoder': {'bidirectional': True, 'dropout': 0.5, 'hidden_size': 200, 'input_size': 178, 'num_layers': 2, 'type': 'lstm'}, 'include_start_end_transitions': False, 'label_encoding': 'BIO', 'regularizer': [['scalar_parameters', {'alpha': 0.1, 'type': 'l2'}]], 'text_field_embedder': {'token_embedders': {'token_characters': {'embedding': {'embedding_dim': 16}, 'encoder': {'conv_layer_activation': 'relu', 'embedding_dim': 16, 'ngram_filter_sizes': [3], 'num_filters': 128, 'type': 'cnn'}, 'type': 'character_encoding'}, 'tokens': {'embedding_dim': 50, 'trainable': True, 'type': 'embedding'}}}, 'type': 'onenet'} and extras {'vocab': Vocabulary with namespaces:  intent_labels, Size: 711 || labels, Size: 51 || tokens, Size: 18816 || domain_labels, Size: 10 || token_characters, Size: 90 || Non Padded Namespaces: {'*labels', '*tags'}}
+[2020-10-29 20:16:13,787 PID:3513 INFO params.py pop] model.type = onenet
+[2020-10-29 20:16:13,787 PID:3513 INFO from_params.py from_params] instantiating class <class 'convlab.modules.nlu.multiwoz.onenet.model.OneNet'> from params {'dropout': 0.5, 'encoder': {'bidirectional': True, 'dropout': 0.5, 'hidden_size': 200, 'input_size': 178, 'num_layers': 2, 'type': 'lstm'}, 'include_start_end_transitions': False, 'label_encoding': 'BIO', 'regularizer': [['scalar_parameters', {'alpha': 0.1, 'type': 'l2'}]], 'text_field_embedder': {'token_embedders': {'token_characters': {'embedding': {'embedding_dim': 16}, 'encoder': {'conv_layer_activation': 'relu', 'embedding_dim': 16, 'ngram_filter_sizes': [3], 'num_filters': 128, 'type': 'cnn'}, 'type': 'character_encoding'}, 'tokens': {'embedding_dim': 50, 'trainable': True, 'type': 'embedding'}}}} and extras {'vocab': Vocabulary with namespaces:  intent_labels, Size: 711 || labels, Size: 51 || tokens, Size: 18816 || domain_labels, Size: 10 || token_characters, Size: 90 || Non Padded Namespaces: {'*labels', '*tags'}}
+[2020-10-29 20:16:13,788 PID:3513 INFO from_params.py from_params] instantiating class <class 'allennlp.modules.text_field_embedders.text_field_embedder.TextFieldEmbedder'> from params {'token_embedders': {'token_characters': {'embedding': {'embedding_dim': 16}, 'encoder': {'conv_layer_activation': 'relu', 'embedding_dim': 16, 'ngram_filter_sizes': [3], 'num_filters': 128, 'type': 'cnn'}, 'type': 'character_encoding'}, 'tokens': {'embedding_dim': 50, 'trainable': True, 'type': 'embedding'}}} and extras {'vocab': Vocabulary with namespaces:  intent_labels, Size: 711 || labels, Size: 51 || tokens, Size: 18816 || domain_labels, Size: 10 || token_characters, Size: 90 || Non Padded Namespaces: {'*labels', '*tags'}}
+[2020-10-29 20:16:13,788 PID:3513 INFO params.py pop] model.text_field_embedder.type = basic
+[2020-10-29 20:16:13,788 PID:3513 INFO params.py pop] model.text_field_embedder.embedder_to_indexer_map = None
+[2020-10-29 20:16:13,788 PID:3513 INFO params.py pop] model.text_field_embedder.allow_unmatched_keys = False
+[2020-10-29 20:16:13,788 PID:3513 INFO from_params.py from_params] instantiating class <class 'allennlp.modules.token_embedders.token_embedder.TokenEmbedder'> from params {'embedding': {'embedding_dim': 16}, 'encoder': {'conv_layer_activation': 'relu', 'embedding_dim': 16, 'ngram_filter_sizes': [3], 'num_filters': 128, 'type': 'cnn'}, 'type': 'character_encoding'} and extras {'vocab': Vocabulary with namespaces:  intent_labels, Size: 711 || labels, Size: 51 || tokens, Size: 18816 || domain_labels, Size: 10 || token_characters, Size: 90 || Non Padded Namespaces: {'*labels', '*tags'}}
+[2020-10-29 20:16:13,788 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.type = character_encoding
+[2020-10-29 20:16:13,789 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.embedding.num_embeddings = None
+[2020-10-29 20:16:13,789 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.embedding.vocab_namespace = token_characters
+[2020-10-29 20:16:13,789 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.embedding.embedding_dim = 16
+[2020-10-29 20:16:13,789 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.embedding.pretrained_file = None
+[2020-10-29 20:16:13,789 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.embedding.projection_dim = None
+[2020-10-29 20:16:13,789 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.embedding.trainable = True
+[2020-10-29 20:16:13,789 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.embedding.padding_index = None
+[2020-10-29 20:16:13,789 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.embedding.max_norm = None
+[2020-10-29 20:16:13,789 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.embedding.norm_type = 2.0
+[2020-10-29 20:16:13,789 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.embedding.scale_grad_by_freq = False
+[2020-10-29 20:16:13,789 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.embedding.sparse = False
+[2020-10-29 20:16:13,790 PID:3513 INFO from_params.py from_params] instantiating class <class 'allennlp.modules.seq2vec_encoders.seq2vec_encoder.Seq2VecEncoder'> from params {'conv_layer_activation': 'relu', 'embedding_dim': 16, 'ngram_filter_sizes': [3], 'num_filters': 128, 'type': 'cnn'} and extras {}
+[2020-10-29 20:16:13,790 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.encoder.type = cnn
+[2020-10-29 20:16:13,790 PID:3513 INFO from_params.py from_params] instantiating class <class 'allennlp.modules.seq2vec_encoders.cnn_encoder.CnnEncoder'> from params {'conv_layer_activation': 'relu', 'embedding_dim': 16, 'ngram_filter_sizes': [3], 'num_filters': 128} and extras {}
+[2020-10-29 20:16:13,790 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.encoder.embedding_dim = 16
+[2020-10-29 20:16:13,790 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.encoder.num_filters = 128
+[2020-10-29 20:16:13,790 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.encoder.ngram_filter_sizes = [3]
+[2020-10-29 20:16:13,790 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.encoder.conv_layer_activation = relu
+[2020-10-29 20:16:13,791 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.encoder.output_dim = None
+[2020-10-29 20:16:13,791 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.token_characters.dropout = 0.0
+[2020-10-29 20:16:13,791 PID:3513 INFO from_params.py from_params] instantiating class <class 'allennlp.modules.token_embedders.token_embedder.TokenEmbedder'> from params {'embedding_dim': 50, 'trainable': True, 'type': 'embedding'} and extras {'vocab': Vocabulary with namespaces:  intent_labels, Size: 711 || labels, Size: 51 || tokens, Size: 18816 || domain_labels, Size: 10 || token_characters, Size: 90 || Non Padded Namespaces: {'*labels', '*tags'}}
+[2020-10-29 20:16:13,791 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.tokens.type = embedding
+[2020-10-29 20:16:13,792 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.tokens.num_embeddings = None
+[2020-10-29 20:16:13,792 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.tokens.vocab_namespace = tokens
+[2020-10-29 20:16:13,792 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.tokens.embedding_dim = 50
+[2020-10-29 20:16:13,792 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.tokens.pretrained_file = None
+[2020-10-29 20:16:13,792 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.tokens.projection_dim = None
+[2020-10-29 20:16:13,792 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.tokens.trainable = True
+[2020-10-29 20:16:13,792 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.tokens.padding_index = None
+[2020-10-29 20:16:13,792 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.tokens.max_norm = None
+[2020-10-29 20:16:13,792 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.tokens.norm_type = 2.0
+[2020-10-29 20:16:13,792 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.tokens.scale_grad_by_freq = False
+[2020-10-29 20:16:13,793 PID:3513 INFO params.py pop] model.text_field_embedder.token_embedders.tokens.sparse = False
+[2020-10-29 20:16:13,801 PID:3513 INFO from_params.py from_params] instantiating class <class 'allennlp.modules.seq2seq_encoders.seq2seq_encoder.Seq2SeqEncoder'> from params {'bidirectional': True, 'dropout': 0.5, 'hidden_size': 200, 'input_size': 178, 'num_layers': 2, 'type': 'lstm'} and extras {'vocab': Vocabulary with namespaces:  intent_labels, Size: 711 || labels, Size: 51 || tokens, Size: 18816 || domain_labels, Size: 10 || token_characters, Size: 90 || Non Padded Namespaces: {'*labels', '*tags'}}
+[2020-10-29 20:16:13,801 PID:3513 INFO params.py pop] model.encoder.type = lstm
+[2020-10-29 20:16:13,802 PID:3513 INFO params.py pop] model.encoder.batch_first = True
+[2020-10-29 20:16:13,802 PID:3513 INFO params.py pop] model.encoder.stateful = False
+[2020-10-29 20:16:13,802 PID:3513 INFO params.py as_dict] Converting Params object to dict; logging of default values will not occur when dictionary parameters are used subsequently.
+[2020-10-29 20:16:13,802 PID:3513 INFO params.py as_dict] CURRENTLY DEFINED PARAMETERS: 
+[2020-10-29 20:16:13,802 PID:3513 INFO params.py log_recursively] model.encoder.bidirectional = True
+[2020-10-29 20:16:13,802 PID:3513 INFO params.py log_recursively] model.encoder.dropout = 0.5
+[2020-10-29 20:16:13,802 PID:3513 INFO params.py log_recursively] model.encoder.hidden_size = 200
+[2020-10-29 20:16:13,802 PID:3513 INFO params.py log_recursively] model.encoder.input_size = 178
+[2020-10-29 20:16:13,802 PID:3513 INFO params.py log_recursively] model.encoder.num_layers = 2
+[2020-10-29 20:16:13,802 PID:3513 INFO params.py log_recursively] model.encoder.batch_first = True
+[2020-10-29 20:16:13,821 PID:3513 INFO params.py pop] model.tag_label_namespace = labels
+[2020-10-29 20:16:13,821 PID:3513 INFO params.py pop] model.domain_label_namespace = domain_labels
+[2020-10-29 20:16:13,822 PID:3513 INFO params.py pop] model.intent_label_namespace = intent_labels
+[2020-10-29 20:16:13,822 PID:3513 INFO params.py pop] model.label_encoding = BIO
+[2020-10-29 20:16:13,822 PID:3513 INFO params.py pop] model.include_start_end_transitions = False
+[2020-10-29 20:16:13,822 PID:3513 INFO params.py pop] model.crf_decoding = False
+[2020-10-29 20:16:13,822 PID:3513 INFO params.py pop] model.constrain_crf_decoding = None
+[2020-10-29 20:16:13,822 PID:3513 INFO params.py pop] model.focal_loss_gamma = None
+[2020-10-29 20:16:13,822 PID:3513 INFO params.py pop] model.calculate_span_f1 = None
+[2020-10-29 20:16:13,822 PID:3513 INFO params.py pop] model.dropout = 0.5
+[2020-10-29 20:16:13,822 PID:3513 INFO params.py pop] model.verbose_metrics = False
+[2020-10-29 20:16:13,823 PID:3513 INFO params.py pop] model.regularizer = [['scalar_parameters', {'alpha': 0.1, 'type': 'l2'}]]
+[2020-10-29 20:16:13,823 PID:3513 INFO params.py pop] model.regularizer.list.list.type = l2
+[2020-10-29 20:16:13,828 PID:3513 INFO initializers.py __call__] Initializing parameters
+[2020-10-29 20:16:13,829 PID:3513 INFO initializers.py __call__] Done initializing parameters; the following parameters are using their default initialization from their code
+[2020-10-29 20:16:13,829 PID:3513 INFO initializers.py __call__]    domain_projection_layer.bias
+[2020-10-29 20:16:13,829 PID:3513 INFO initializers.py __call__]    domain_projection_layer.weight
+[2020-10-29 20:16:13,829 PID:3513 INFO initializers.py __call__]    encoder._module.bias_hh_l0
+[2020-10-29 20:16:13,829 PID:3513 INFO initializers.py __call__]    encoder._module.bias_hh_l0_reverse
+[2020-10-29 20:16:13,829 PID:3513 INFO initializers.py __call__]    encoder._module.bias_hh_l1
+[2020-10-29 20:16:13,829 PID:3513 INFO initializers.py __call__]    encoder._module.bias_hh_l1_reverse
+[2020-10-29 20:16:13,829 PID:3513 INFO initializers.py __call__]    encoder._module.bias_ih_l0
+[2020-10-29 20:16:13,829 PID:3513 INFO initializers.py __call__]    encoder._module.bias_ih_l0_reverse
+[2020-10-29 20:16:13,830 PID:3513 INFO initializers.py __call__]    encoder._module.bias_ih_l1
+[2020-10-29 20:16:13,830 PID:3513 INFO initializers.py __call__]    encoder._module.bias_ih_l1_reverse
+[2020-10-29 20:16:13,830 PID:3513 INFO initializers.py __call__]    encoder._module.weight_hh_l0
+[2020-10-29 20:16:13,830 PID:3513 INFO initializers.py __call__]    encoder._module.weight_hh_l0_reverse
+[2020-10-29 20:16:13,830 PID:3513 INFO initializers.py __call__]    encoder._module.weight_hh_l1
+[2020-10-29 20:16:13,830 PID:3513 INFO initializers.py __call__]    encoder._module.weight_hh_l1_reverse
+[2020-10-29 20:16:13,830 PID:3513 INFO initializers.py __call__]    encoder._module.weight_ih_l0
+[2020-10-29 20:16:13,830 PID:3513 INFO initializers.py __call__]    encoder._module.weight_ih_l0_reverse
+[2020-10-29 20:16:13,830 PID:3513 INFO initializers.py __call__]    encoder._module.weight_ih_l1
+[2020-10-29 20:16:13,830 PID:3513 INFO initializers.py __call__]    encoder._module.weight_ih_l1_reverse
+[2020-10-29 20:16:13,830 PID:3513 INFO initializers.py __call__]    intent_projection_layer.bias
+[2020-10-29 20:16:13,830 PID:3513 INFO initializers.py __call__]    intent_projection_layer.weight
+[2020-10-29 20:16:13,830 PID:3513 INFO initializers.py __call__]    tag_projection_layer._module.bias
+[2020-10-29 20:16:13,831 PID:3513 INFO initializers.py __call__]    tag_projection_layer._module.weight
+[2020-10-29 20:16:13,831 PID:3513 INFO initializers.py __call__]    text_field_embedder.token_embedder_token_characters._embedding._module.weight
+[2020-10-29 20:16:13,831 PID:3513 INFO initializers.py __call__]    text_field_embedder.token_embedder_token_characters._encoder._module.conv_layer_0.bias
+[2020-10-29 20:16:13,831 PID:3513 INFO initializers.py __call__]    text_field_embedder.token_embedder_token_characters._encoder._module.conv_layer_0.weight
+[2020-10-29 20:16:13,831 PID:3513 INFO initializers.py __call__]    text_field_embedder.token_embedder_tokens.weight
+[2020-10-29 20:16:13,842 PID:3513 INFO from_params.py from_params] instantiating class <class 'allennlp.data.dataset_readers.dataset_reader.DatasetReader'> from params {'token_indexers': {'token_characters': {'min_padding_length': 3, 'type': 'characters'}, 'tokens': {'lowercase_tokens': True, 'type': 'single_id'}}, 'type': 'onenet'} and extras {}
+[2020-10-29 20:16:13,842 PID:3513 INFO params.py pop] dataset_reader.type = onenet
+[2020-10-29 20:16:13,842 PID:3513 INFO from_params.py from_params] instantiating class <class 'convlab.modules.nlu.multiwoz.onenet.dataset_reader.OneNetDatasetReader'> from params {'token_indexers': {'token_characters': {'min_padding_length': 3, 'type': 'characters'}, 'tokens': {'lowercase_tokens': True, 'type': 'single_id'}}} and extras {}
+[2020-10-29 20:16:13,842 PID:3513 INFO params.py pop] dataset_reader.token_delimiter = None
+[2020-10-29 20:16:13,842 PID:3513 INFO from_params.py from_params] instantiating class allennlp.data.token_indexers.token_indexer.TokenIndexer from params {'min_padding_length': 3, 'type': 'characters'} and extras {}
+[2020-10-29 20:16:13,843 PID:3513 INFO params.py pop] dataset_reader.token_indexers.token_characters.type = characters
+[2020-10-29 20:16:13,843 PID:3513 INFO from_params.py from_params] instantiating class allennlp.data.token_indexers.token_characters_indexer.TokenCharactersIndexer from params {'min_padding_length': 3} and extras {}
+[2020-10-29 20:16:13,843 PID:3513 INFO params.py pop] dataset_reader.token_indexers.token_characters.namespace = token_characters
+[2020-10-29 20:16:13,843 PID:3513 INFO params.py pop] dataset_reader.token_indexers.token_characters.start_tokens = None
+[2020-10-29 20:16:13,843 PID:3513 INFO params.py pop] dataset_reader.token_indexers.token_characters.end_tokens = None
+[2020-10-29 20:16:13,843 PID:3513 INFO params.py pop] dataset_reader.token_indexers.token_characters.min_padding_length = 3
+[2020-10-29 20:16:13,843 PID:3513 INFO from_params.py from_params] instantiating class allennlp.data.token_indexers.token_indexer.TokenIndexer from params {'lowercase_tokens': True, 'type': 'single_id'} and extras {}
+[2020-10-29 20:16:13,844 PID:3513 INFO params.py pop] dataset_reader.token_indexers.tokens.type = single_id
+[2020-10-29 20:16:13,844 PID:3513 INFO from_params.py from_params] instantiating class allennlp.data.token_indexers.single_id_token_indexer.SingleIdTokenIndexer from params {'lowercase_tokens': True} and extras {}
+[2020-10-29 20:16:13,844 PID:3513 INFO params.py pop] dataset_reader.token_indexers.tokens.namespace = tokens
+[2020-10-29 20:16:13,844 PID:3513 INFO params.py pop] dataset_reader.token_indexers.tokens.lowercase_tokens = True
+[2020-10-29 20:16:13,844 PID:3513 INFO params.py pop] dataset_reader.token_indexers.tokens.start_tokens = None
+[2020-10-29 20:16:13,844 PID:3513 INFO params.py pop] dataset_reader.token_indexers.tokens.end_tokens = None
+[2020-10-29 20:16:13,844 PID:3513 INFO params.py pop] dataset_reader.lazy = False
+[2020-10-29 20:16:13,898 PID:3513 INFO multiwoz.py __init__] MultiWozEnv:
+- e = 0
+- done = False
+- env_spec = {'max_frame': 1000,
+ 'max_t': 40,
+ 'name': 'multiwoz',
+ 'nlg': {'is_user': True, 'name': 'MultiwozTemplateNLG'},
+ 'nlu': {'model_file': 'https://convlab.blob.core.windows.net/models/onenet.tar.gz',
+         'name': 'OneNetLU'},
+ 'sys_policy': {'name': 'RuleBasedMultiwozBot'},
+ 'user_policy': {'name': 'UserPolicyAgendaMultiWoz'}}
+- log_frequency = None
+- frame_op = None
+- frame_op_len = None
+- normalize_state = False
+- reward_scale = None
+- num_envs = 1
+- eval_frequency = 1000
+- name = multiwoz
+- max_t = 40
+- max_frame = 1000
+- is_venv = False
+- clock_speed = 1
+- clock = <convlab.env.base.Clock object at 0x7fdc6c111a90>
+- to_render = False
+- action_dim = 0
+- observation_dim = 0
+- u_env = <convlab.env.multiwoz.MultiWozEnvironment object at 0x7fdc6c111ac8>
+- evaluator = None
+- observation_space = Box(0,)
+- action_space = Discrete(0)
+- observable_dim = {'state': 0}
+- is_discrete = True
+[2020-10-29 20:16:13,899 PID:3513 INFO logger.py info] Session:
+- spec = onenet_rule_rule_template
+- index = 0
+- agent = <convlab.agent.DialogAgent object at 0x7fdc6d5a4080>
+- env = <convlab.env.multiwoz.MultiWozEnv object at 0x7fdd1c0682e8>
+- eval_env = <convlab.env.multiwoz.MultiWozEnv object at 0x7fdc6c1119b0>
+- num_eval = 100
+- warmup_epi = -1
+[2020-10-29 20:16:46,094 PID:3513 INFO logger.py info] 100 episodes, 37.47 return, 72.00% success rate, 10.93 turns
+[2020-10-29 20:16:46,095 PID:3513 INFO logger.py info] Session 0 done
+[2020-10-29 20:16:46,095 PID:3513 INFO archival.py _cleanup_archive_dir] removing temporary unarchived model dir at /tmp/tmpxqlkw80g
+[2020-10-29 20:16:46,098 PID:3513 INFO archival.py _cleanup_archive_dir] removing temporary unarchived model dir at /tmp/tmp8lff00s8
+[2020-10-29 20:16:46,100 PID:3513 INFO archival.py _cleanup_archive_dir] removing temporary unarchived model dir at /tmp/tmpwp8pv5z8

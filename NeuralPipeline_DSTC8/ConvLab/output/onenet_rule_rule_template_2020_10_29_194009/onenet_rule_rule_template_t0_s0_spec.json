@@ -1,0 +1,74 @@
+{
+  "agent": [
+    {
+      "name": "DialogAgent",
+      "nlu": {
+        "name": "OneNetLU",
+        "model_file": "https://convlab.blob.core.windows.net/models/onenet.tar.gz"
+      },
+      "dst": {
+        "name": "RuleDST"
+      },
+      "nlg": {
+        "name": "MultiwozTemplateNLG",
+        "is_user": false
+      },
+      "algorithm": {
+        "name": "ExternalPolicy",
+        "policy": {
+          "name": "RuleBasedMultiwozBot"
+        },
+        "action_pdtype": "Argmax",
+        "action_policy": "default"
+      }
+    }
+  ],
+  "env": [
+    {
+      "name": "multiwoz",
+      "user_policy": {
+        "name": "UserPolicyAgendaMultiWoz"
+      },
+      "sys_policy": {
+        "name": "RuleBasedMultiwozBot"
+      },
+      "nlu": {
+        "name": "OneNetLU",
+        "model_file": "https://convlab.blob.core.windows.net/models/onenet.tar.gz"
+      },
+      "nlg": {
+        "name": "MultiwozTemplateNLG",
+        "is_user": true
+      },
+      "max_t": 40,
+      "max_frame": 1000
+    }
+  ],
+  "meta": {
+    "distributed": false,
+    "eval_frequency": 1000,
+    "num_eval": 100,
+    "max_tick_unit": "total_t",
+    "max_trial": 1,
+    "max_session": 1,
+    "resources": {
+      "num_cpus": 1,
+      "num_gpus": 0
+    },
+    "experiment": 0,
+    "trial": 0,
+    "session": 0,
+    "cuda_offset": 0,
+    "experiment_ts": "2020_10_29_194009",
+    "prepath": "output/onenet_rule_rule_template_2020_10_29_194009/onenet_rule_rule_template_t0_s0",
+    "ckpt": null,
+    "git_sha": "87b84ef82140f17daed03487711150211fff09bc",
+    "random_seed": 1603971609,
+    "eval_model_prepath": null,
+    "graph_prepath": "output/onenet_rule_rule_template_2020_10_29_194009/graph/onenet_rule_rule_template_t0_s0",
+    "info_prepath": "output/onenet_rule_rule_template_2020_10_29_194009/info/onenet_rule_rule_template_t0_s0",
+    "log_prepath": "output/onenet_rule_rule_template_2020_10_29_194009/log/onenet_rule_rule_template_t0_s0",
+    "model_prepath": "output/onenet_rule_rule_template_2020_10_29_194009/model/onenet_rule_rule_template_t0_s0"
+  },
+  "name": "onenet_rule_rule_template"
+}
