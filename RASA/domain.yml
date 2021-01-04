@@ -11,15 +11,18 @@ intents:
 - bot_challenge
 responses:
   utter_greet:
-  - text: Hey! How are you?
+  - text: 嗨，{name}你好呀！ #加入name变量,这个是模版
+  - text: 嗨，我滴小可爱！
+  - text: 你好！
+  - text: 你好呀，小朋友！
   utter_cheer_up:
   - image: https://i.imgur.com/nGF1K8f.jpg
-    text: 'Here is something to cheer you up:'
+    text: '给你看一个可爱的小老虎,怎么样，可爱叭。'
   utter_did_that_help:
-  - text: Did that help you?
+  - text: 怎么样，感觉好一点了吗？
   utter_happy:
-  - text: Great, carry on!
+  - text: 那就好，能让你感觉好一点是我的荣幸。
   utter_goodbye:
-  - text: Bye
+  - text: 再会啦。
   utter_iamabot:
-  - text: I am a bot, powered by Rasa.
+  - text: 我的名字叫小龟，我是一个机器人哦！

@@ -16,13 +16,21 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
+    - 嗨，你好呀！
+    - 你好
+    - 您好
+    - 晚上好
+    - 早晨好
+    - 中午好
+    - 下午好
+    - 哈喽
 
 - intent: goodbye
   examples: |
-    - good afternoon
-    - cu
-    - good by
-    - cee you later
+    - 再见
+    - 拜拜
+    - 不聊了
+    - 再会
     - good night
     - bye
     - goodbye
@@ -39,7 +47,13 @@ nlu:
     - of course
     - that sounds good
     - correct
-
+    - 是的
+    - 你说的对
+    - 对啊
+    - 就是
+    - 可以
+    - 没问题的
+    - 没问题
 - intent: deny
   examples: |
     - no
@@ -49,6 +63,16 @@ nlu:
     - don't like that
     - no way
     - not really
+    - 不好
+    - 不要
+    - 不是这样的
+    - 不可以
+    - 并不是这样
+    - 不是这个问题
+    - 拒绝
+    - 不行
+    - 甭想
+
 
 - intent: mood_great
   examples: |
@@ -66,7 +90,13 @@ nlu:
     - so so perfect
     - so good
     - so perfect
-
+    - 完美
+    - 太棒了
+    - 太好了
+    - 很不错啊
+    - 那是很好的
+    - 不可思议哦
+    - 太令人惊奇了
 - intent: mood_unhappy
   examples: |
     - my day was horrible
@@ -83,10 +113,59 @@ nlu:
     - extremly sad
     - so saad
     - so sad
-
+    - 我今天不开心
+    - 我好难过啊
+    - 真是令人沮丧的一天
+    - 今天令人难过
+    - 哎，难过
+    - 不开心啊
+    - 不高兴
+    - 不是令人开心的一天
 - intent: bot_challenge
   examples: |
     - are you a bot?
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+    - 你是一个机器人嘛？
+    - 你是真人嘛？
+    - 我是在和机器人对话吗？
+    - 我是在和谁说话哦？
+
+
+- intent: find_kebiao #课表查询
+  examples: |
+    - 我想查询一下今天的[数学课程]("class")? #标明课程是一个实体为class的实体
+    - 能不能告诉我今天上[英语课]{"entity":"class"}的时间
+    - 可不可以告诉我今天什么时候上[审艺课]{"entity":"class","value":"审美与艺术课"} #标注出实体的类别是class,并且确定这个方框标出的内容是classname
+
+- synonym: 审美与艺术课
+  examples: ｜
+    - 审艺课
+    - 审艺
+    - 审艺学
+- regex: help
+  examples: |
+    - \bhelp\b
+
+- regex: stu_id #正则表达式查找学号
+  examples: \d{12}
+- intent: inform_id
+  examples: |
+    - 我的学号{123456789012}("stu_id")。
+    - {123456789012}("stu_id")是我的学号。
+- lookup: library
+  examples: |
+    - 主馆
+    - 李政道图书馆
+    - 包玉刚图书馆
+    - 钱学森图书馆
+    - 包兆龙图书馆
+    - 法学图书馆
+- intent: exam_info #考试时间查询
+
+- intent: library_reservation #图书馆预定
+
+- intent: charge_account #充值校园卡
+
+- intent: search_socre #查询成绩
