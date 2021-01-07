@@ -28,3 +28,55 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
+
+- story: find_curriculum_kind
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: find_curriculum_kind
+  - action: utter_search_today_class
+
+- story: find_cur_time 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: find_curriculum_time
+  - action: utter_curriculum_time
+  - intent: affirm
+  - action: utter_uwellcome
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: find_cur_time 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: find_curriculum_time
+  - action: utter_class_name
+  - intent: tell_the_clss_name
+  - action: utter_aff
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: exam_info
+  steps:
+  - intent: find_exam_info
+  - action: utter_exam_info
+
+- story: library_res
+  steps:
+  - intent: library_reservation
+  - action: utter_library_reserve
+
+- story: charge_account
+  steps:
+  - intent: charge_account
+  - action: utter_charge
+
+- story: socre_searching
+  steps:
+  - intent: search_socre
+  - action: utter_search_score
+
+
+

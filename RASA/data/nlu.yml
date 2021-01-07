@@ -133,14 +133,22 @@ nlu:
     - 我是在和谁说话哦？
 
 
-- intent: find_kebiao #课表查询
+- intent: find_curriculum_time #课表查询
   examples: |
     - 我想查询一下今天的[数学课程]("class")? #标明课程是一个实体为class的实体
     - 能不能告诉我今天上[英语课]{"entity":"class"}的时间
     - 可不可以告诉我今天什么时候上[审艺课]{"entity":"class","value":"审美与艺术课"} #标注出实体的类别是class,并且确定这个方框标出的内容是classname
 
-- synonym: 审美与艺术课
-  examples: ｜
+- intent: find_curriculum_kind
+  examples: |
+    - 我想查询一下今天上什么课？
+    - 我想问一下今天上什么课？
+    - 我想知道今天的课程是什么？
+    - 我想了解一下今天的课表？
+    - 今天的课程是什么？
+
+- synonym: 审美与艺术
+  examples: |
     - 审艺课
     - 审艺
     - 审艺学
@@ -149,7 +157,8 @@ nlu:
     - \bhelp\b
 
 - regex: stu_id #正则表达式查找学号
-  examples: \d{12}
+  examples: |
+    - \d{12}
 - intent: inform_id
   examples: |
     - 我的学号{123456789012}("stu_id")。
@@ -162,10 +171,38 @@ nlu:
     - 钱学森图书馆
     - 包兆龙图书馆
     - 法学图书馆
-- intent: exam_info #考试时间查询
+- intent: find_exam_info #考试时间查询
+  examples: |
+    - 我想查询一下我的考试时间是什么？
+    - 我什么时候考试？
+    - 明天考什么？
+    - 后天考什么？
+    - 这星期几考试？
+    - 考试具体时间是什么时候？
 
 - intent: library_reservation #图书馆预定
-
+  examples: |
+    - 我想预定一下[法学图书馆]("library")。
+    - 我想预定一下[包玉刚图书馆]("library")
+    - 我想预定一下[钱学森图书馆]("library")
+    - 我想预约一下[包兆龙图书馆]("library")
+    - 我想预约一下[法学图书馆]("library")
 - intent: charge_account #充值校园卡
+  examples: |
+    - 我想充值我的校园卡。
+    - 我想给我的校园卡充钱。
+    - 我想在我的校园卡上充值一些现金。
 
 - intent: search_socre #查询成绩
+  examples: |
+    - 我想查询一下我的考试成绩。
+    - 能不能帮我查询一下分数是多少。
+    - 我想查一下我考了多少分。
+
+- intent: tell_the_clss_name
+  examples: |
+    - 我想上[语文课]("class")
+    - "[英语课]('class')"
+    - "[数学课]('class')"
+    - "[自然语言处理课]('class')"
+    - "[统计学习方法课]('class')"

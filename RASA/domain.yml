@@ -2,16 +2,23 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- greet
+- greet 
 - goodbye
 - affirm
 - deny
 - mood_great
 - mood_unhappy
 - bot_challenge
+- find_curriculum_time
+- find_curriculum_kind
+- find_exam_info
+- library_reservation
+- charge_account
+- search_socre
+- tell_the_clss_name
 responses:
   utter_greet:
-  - text: 嗨，{name}你好呀！ #加入name变量,这个是模版
+  - text: 嗨，你好呀！ #加入name变量,这个是模版{name}
   - text: 嗨，我滴小可爱！
   - text: 你好！
   - text: 你好呀，小朋友！
@@ -24,5 +31,37 @@ responses:
   - text: 那就好，能让你感觉好一点是我的荣幸。
   utter_goodbye:
   - text: 再会啦。
+  utter_uwellcome:
+  - text: 没事，不客气。
+  - text: 很高兴为您服务
+  - text: 很开心能够帮助到你
   utter_iamabot:
   - text: 我的名字叫小龟，我是一个机器人哦！
+  utter_aff:
+  - text: 嗯嗯啊！
+  utter_class_name:
+  - text: 请问你上课的名称是什么呢？
+  - text: 请问你想查询的课程名称是什么呢?
+  utter_curriculum_time:
+  - text: 你上{class_name}的时间是{class_time}。    #{class_name}{class_time}
+  - text: ",你{name}这门课的上课时间是{class_time}." #{name}{class_time}
+  - text: "{name}你好，这门课的开课时间是{class_time},不要忘记哦。"
+  utter_library_reserve:
+  - text: 好滴，已经帮您预约了。      
+  - text: ",图书馆已经帮您预定完毕啦。"
+  - text: 同学呀，图书馆已经帮您预定完毕啦。
+  utter_search_today_class:
+  - text: 今天都上这些课:{class_name_list}.   #{class_name_list}
+  utter_charge:
+  - text: 请问您的充值金额是多少呢？
+  - text: 请问您打算充值多少钱呢？
+  utter_exam_info:
+  - text: 你今天下午考高数，你知道吗？你复习了吗？
+    #text2: 考试时间是下午一点半到下午三点半。
+  - text: 你明天下午考8000米长跑，准备的怎么样啦？
+    #text3: 考试时间是下午三点。
+    #text4: 请及时做好热身和拉伸运动。
+  utter_search_score:
+  - text: 你当前科目的考试成绩为100分。
+  - text: 你当前的考试成绩是99分。
+  - text: 不好意思，你考了59分，很遗憾哦。
