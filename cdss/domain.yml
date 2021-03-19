@@ -1,0 +1,75 @@
+
+actions:
+  - utter_first
+  - utter_donknow
+  - action_first
+  - action_donknow
+  - action_echo
+  - action_search_treat
+  - action_search_food
+  - action_search_symptom
+  - action_search_neopathy
+  - action_search_drug
+  - action_search_prevention
+  - action_search_drug_func
+  - action_search_disease_treat_time
+  - action_search_easy_get
+  - action_search_disease_dept
+  - utter_greet
+  - utter_howcanhelp
+  - utter_goodbye
+entities:
+  - disease
+  - drug
+intents:
+  - first
+  -
+    greet:
+      triggers: action_first
+  - bye
+  - affirmative
+  - search_treat
+  - search_food
+  - search_symptom
+  - search_neopathy
+  - search_drug
+  - search_prevention
+  - search_drug_func
+  - search_disease_treat_time
+  - search_easy_get
+  - search_disease_dept
+slots:
+  dept:
+    type: text
+  disease:
+    type: text
+  drug:
+    type: text
+  food:
+    type: text
+  pre_disease:
+    type: unfeaturized
+  sure:
+    type: unfeaturized
+  symptom:
+    type: text
+templates:
+  utter_donknow:
+    -
+      text: 啊噢，我没有理解您说的话，我的理解力还需要更多的提升>_<。
+  utter_first:
+    -
+      text: 您好，我是开课吧小AI，我是个机器人，请问有什么可以帮您？
+  utter_goodbye:
+    -
+      text: 再见，祝您身体健康～
+    -
+      text: 拜拜，希望我有帮到您～
+  utter_greet:
+    -
+      text: 您好～
+    -
+      text: 您好呀～
+  utter_howcanhelp:
+    -
+      text: "您可以这样向我提问: 头痛怎么办/ 什么人容易头痛/ 头痛吃什么药/ 头痛能治吗/ 糖尿病有什么并发症/ 糖尿病有什么症状"

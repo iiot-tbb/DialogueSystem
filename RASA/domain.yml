@@ -2,7 +2,7 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- greet 
+- greet
 - goodbye
 - affirm
 - deny
@@ -16,15 +16,65 @@ intents:
 - charge_account
 - search_socre
 - tell_the_clss_name
+- inform_id
+- request_weather
+- inform_weather
+- chitchat
+- thanks
+- stop
+entities:
+- class
+- library
+- date_time
+- address
+- type
+- number
+- business
+- '"class"'
+- '"library"'
+- "'class'"
+slots:
+  class:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  library:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  date_time:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  address:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  type:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  number:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  business:
+    type: any
+    auto_fill: false
+    influence_conversation: false
+  requested_slot:
+    type: any
+    auto_fill: false
+    influence_conversation: false
 responses:
   utter_greet:
-  - text: 嗨，你好呀！ #加入name变量,这个是模版{name}
+  - text: 嗨，你好呀！
   - text: 嗨，我滴小可爱！
   - text: 你好！
   - text: 你好呀，小朋友！
   utter_cheer_up:
   - image: https://i.imgur.com/nGF1K8f.jpg
-    text: '给你看一个可爱的小老虎,怎么样，可爱叭。'
+    text: 给你看一个可爱的小老虎,怎么样，可爱叭。
   utter_did_that_help:
   - text: 怎么样，感觉好一点了吗？
   utter_happy:
@@ -39,29 +89,66 @@ responses:
   - text: 我的名字叫小龟，我是一个机器人哦！
   utter_aff:
   - text: 嗯嗯啊！
+  - text: 好滴呢。
+  - text: 嗯啊！
   utter_class_name:
   - text: 请问你上课的名称是什么呢？
   - text: 请问你想查询的课程名称是什么呢?
   utter_curriculum_time:
-  - text: 你上{class_name}的时间是{class_time}。    #{class_name}{class_time}
-  - text: ",你{name}这门课的上课时间是{class_time}." #{name}{class_time}
-  - text: "{name}你好，这门课的开课时间是{class_time},不要忘记哦。"
+  - text: 你上{class_name}的时间是{class_time}。
+  - text: ',你{name}这门课的上课时间是{class_time}.'
+  - text: '{name}你好，这门课的开课时间是{class_time},不要忘记哦。'
   utter_library_reserve:
-  - text: 好滴，已经帮您预约了。      
-  - text: ",图书馆已经帮您预定完毕啦。"
+  - text: 好滴，已经帮您预约了。
+  - text: ',图书馆已经帮您预定完毕啦。'
   - text: 同学呀，图书馆已经帮您预定完毕啦。
   utter_search_today_class:
-  - text: 今天都上这些课:{class_name_list}.   #{class_name_list}
+  - text: 今天都上这些课:{class_name_list}.
   utter_charge:
   - text: 请问您的充值金额是多少呢？
   - text: 请问您打算充值多少钱呢？
   utter_exam_info:
   - text: 你今天下午考高数，你知道吗？你复习了吗？
-    #text2: 考试时间是下午一点半到下午三点半。
   - text: 你明天下午考8000米长跑，准备的怎么样啦？
-    #text3: 考试时间是下午三点。
-    #text4: 请及时做好热身和拉伸运动。
   utter_search_score:
   - text: 你当前科目的考试成绩为100分。
   - text: 你当前的考试成绩是99分。
   - text: 不好意思，你考了59分，很遗憾哦。
+  utter_ask_date_time:
+  - text: 请问您要查询哪一天的天气？
+  utter_ask_address:
+  - text: 请问您要查下哪里的天气？
+  utter_wrong_business:
+  - text: 当前还不支持{business}业务，请重新输入。
+  utter_wrong_type:
+  - text: 当前还不支持查询{type}。
+  utter_wrong_number:
+  - text: 您输入的{number}有误，请重新输入。
+  utter_chitchat:
+  - text: 哈？
+  - text: 哈哈哈？
+  utter_to_continue:
+  - text: 还要继续查询吗？
+  - text: 是否还要继续？
+  - text: 还有需要我帮助的地方吗？
+  - text: 请问您还打算继续问吗？
+  - text: 请问还要继续吗？
+actions:
+- utter_ask_date_time
+- utter_ask_address
+- utter_ask_number
+- utter_ask_business
+- utter_ask_type
+- action_default_fallback
+- weather_form
+- number_form
+- utter_greet
+- utter_cheer_up
+- utter_happy
+- utter_goodbye
+- utter_aff
+- utter_to_continue
+- action_hello_world
+forms:
+  weather_form: {}
+  number_form: {}

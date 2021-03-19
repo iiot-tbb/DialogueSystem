@@ -1,0 +1,24 @@
+2021-01-21 00:32:39,157 [INFO ]  Starting Rasa server on http://localhost:5005
+2021-01-21 00:32:39,160 [INFO ]  Loading model models/20210120-201944.tar.gz...
+2021-01-21 00:32:40,918 [INFO ]  Loading model models/20210120-201944.tar.gz...
+2021-01-21 00:32:56,926 [INFO ]  Rasa server is up and running.
+2021-01-21 00:33:11,273 [ERROR]  Encountered an exception while running action 'weather_form'.Bot will continue, but the actions events are lost. Please check the logs of your action server for more information.
+Traceback (most recent call last):
+  File "/home/bool_tbb/miniconda3/envs/RASA/lib/python3.8/site-packages/rasa/core/processor.py", line 750, in _run_action
+    events = await action.run(
+  File "/home/bool_tbb/miniconda3/envs/RASA/lib/python3.8/site-packages/rasa/core/actions/action.py", line 657, in run
+    raise RasaException(
+rasa.shared.exceptions.RasaException: Failed to execute custom action 'weather_form' because no endpoint is configured to run this custom action. Please take a look at the docs and set an endpoint configuration via the --endpoints flag. https://rasa.com/docs/rasa/custom-actions
+2021-01-21 00:33:15,670 [INFO ]  Killing Sanic server now.
+2021-01-21 00:49:55,210 [INFO ]  Starting Rasa server on http://localhost:5005
+2021-01-21 00:49:55,212 [INFO ]  Loading model models/20210121-004840.tar.gz...
+2021-01-21 00:49:56,924 [INFO ]  Loading model models/20210121-004840.tar.gz...
+2021-01-21 00:50:11,192 [INFO ]  Rasa server is up and running.
+2021-01-21 00:50:25,545 [ERROR]  Encountered an exception while running action 'weather_form'.Bot will continue, but the actions events are lost. Please check the logs of your action server for more information.
+Traceback (most recent call last):
+  File "/home/bool_tbb/miniconda3/envs/RASA/lib/python3.8/site-packages/rasa/core/processor.py", line 750, in _run_action
+    events = await action.run(
+  File "/home/bool_tbb/miniconda3/envs/RASA/lib/python3.8/site-packages/rasa/core/actions/action.py", line 657, in run
+    raise RasaException(
+rasa.shared.exceptions.RasaException: Failed to execute custom action 'weather_form' because no endpoint is configured to run this custom action. Please take a look at the docs and set an endpoint configuration via the --endpoints flag. https://rasa.com/docs/rasa/custom-actions
+2021-01-21 00:50:38,792 [INFO ]  Killing Sanic server now.
